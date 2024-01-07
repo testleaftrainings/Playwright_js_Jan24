@@ -40,10 +40,10 @@ ECMA and ECMAScript: ECMA stands for European Computer Manufacturers Association
 
 *Popular Engines:*
 
-# V8: Chrome's engine, widely used and popular.
-# Chakra: Formerly used in Microsoft Edge and uses V8 now.
-# WebKit: Found in Apple's Safari browser.
-# SpiderMonkey: Firefox's engine, known for its longevity and widespread usage.
+V8: Chrome's engine, widely used and popular.
+Chakra: Formerly used in Microsoft Edge and uses V8 now.
+WebKit: Found in Apple's Safari browser.
+SpiderMonkey: Firefox's engine, known for its longevity and widespread usage.
 
 *Interpreted or Just-In-Time Compiled*
 
