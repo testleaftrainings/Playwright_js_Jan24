@@ -1,0 +1,134 @@
+Selectors:
+
+1. id (Playwright and CSS) #id
+2. class (Playright and CSS) .class
+3. CSS
+4. XPath
+5. getBy methods
+
+//Se --> driver.findElement(By.id("")).sendKeys("")
+page.locator("").fill
+
+page.fill("selector", "value")
+page.click("selector")
+
+
+When you have multiple matches
+[name='firstName'] 1 of 3  --> array of 3 HTML elements
+nth(0) -- first match
+nth(1) -- second match
+nth(2) -- third match
+
+[name='firstName'].nth(2)
+
+To get the text of a web element
+
+1. innerText()  - text as seen by the user
+2. textContent() - text along with the hidden text
+
+CSS syntax:
+1. By id - #idValue / tagName#id
+					  input#username
+2. By class - .className / tagname.class
+							button.decorativeSubmit
+3. By attribute - [attrName = 'value']
+4. By tagname = tagname[attribute = 'value']
+
+5. To find an element where class value starts with a particular string
+	tagName[atrribute^='value']
+	Applications where you will have the first value will be static and the second part can change
+
+6. To find an element where class value ends with a particular string
+	tagname[atrribute$='value']
+	button[class$='btn_inventory']
+
+btn_primary btn_inventory 1 of 6 --> nth(2)
+btn_primary btn_addToCart
+btn_primary	btn_bjshlkas
+btn_primary
+btn_primary
+
+7. To find an element where class contains a substring --> contains
+ Testleaf
+ T
+ Te
+ Tes
+ Test
+ tagname[attribute*='value']
+ button[class*='btn']
+
+
+					Parent
+
+		Child1		Child2 		Child 3
+
+Immediate sibling
+tagName[button = 'value'] + next sibling's  tagName
+p[class='top']+p
+
+All siblings
+tagName[button = 'value'] ~ sibling's  tagName
+
+
+				form
+
+		username	password	Login
+
+page.locator("p[class='top']~p").last().click();
+page.locator("p[class='top']~p").first().click();
+
+To locate the parent and child --> parentTagname childTagname
+									form 
+
+Playwright Locators - return type is Locator
+
+1. page.getByRole() -> to locate  web element by its role (button, link, anchor)
+2. page.getByText() --> to locate the element by text cntent
+3. page.getByLabel() --> to locate the ele/form by the label's text
+4. page.getByPlaceholder() --> to locate an input by placeholder
+5. page.getByTitle() --> to locate an ele by its title attribute
+6. page.getByAltText() --> to locate an ele by its text alternative
+7. page.getByTestId() --> to locate an element based on its data-testid attribute
+
+Dropdown
+ 1. Using the select tag
+ 2. Using non select tag --> li
+
+Selenium --> Select class
+
+Playwright 
+1. Identify the dropdown ele
+const dropdown = page.locator("");
+
+2. Selecting an Option
+ - by value
+ - by label
+ - by index
+
+Assertion
+ a statement that strongly expresses a belief in something being true
+  if(title===Dashboard){
+  	Open that page
+  }
+  else{
+  	Open the Home page
+  }
+
+ expect --> assertion library in PW
+ 1. With auto retry
+ 		timeout: 5000ms
+ 		await expect(button).toBeVisible({timeout:10000})
+ 		Locator related assertions
+ 		Page related assertions
+ 		await expect(page.title)
+
+ 2. Without retry
+ 		Generic assertions
+
+
+ API related assertions
+
+
+ //hard assert - validation fails, your test case fails and stops execution
+ //soft assert - validation fails, it will not stop the execution
+ 					execution continues
