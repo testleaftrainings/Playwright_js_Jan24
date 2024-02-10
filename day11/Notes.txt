@@ -1,0 +1,104 @@
+Rest API Basics
+
+API - Application Programming Interface 
+		Interface - communication medium
+
+
+Key Terms
+
+Methods
+Endpoints - http://api.weather.com/current
+https://api.flipkart.com/books?id=123
+			Base URL
+Request and response
+Data Format - JSON --> fields and values
+Documentation
+
+Tools available for API Testing
+
+1. Postman
+2. SoapUI - SOAP (Simple Object Access Protocol)
+3. Katlon Studio - supports both API & UI testing
+4. Rest Assured - Java based library for testing RESTful APIs
+5. Swagger 
+6. Insomnia
+
+Types of APIs
+REST - Representational State Transfer
+SOAP - high level security - financial service
+GraphQL - Facebook 
+RPC - Remote Procedure Call
+WebSocket API 
+
+API Headers
+Headers - pass additional information about the request/response between client and the server.
+Request headers
+	- used in HTTP requests sent by the client
+	- Commonly used HTTP request headers
+		1. Content-type - specifies the format of the data - json, xml, text, html
+		2. Authorization - credentials information
+		3. Accept - format of the response that the client expects
+
+Response headers
+	-  include responses from the server
+	- Commonly used response headers
+		1. Content-type - format of the data in the response body
+		2. COntent-length - length of the response body
+		3. Set-cookie - cookies stored by the client for future requests
+	
+
+CRUD operations
+Create - POST
+Read - GET
+Update - PUT,PATCH
+Delete - DELETE
+
+HTTP Methods - HTTP Verbs - action to be performed on a particular resource
+GET - retrieve the data from the server
+POST - send the data to the server to create a new resource
+PUT - update a resource that already exists on the server
+PATCH - apply partial modifications to the resource
+DELETE - remove a resource from the server
+
+Authentication
+	Identity of a user or a system
+Authorization
+	Access level
+
+Types
+1. No Authentication - no credentials required
+2. Basic Authentication - Username and Password
+3. OAuth - Open Authentication
+
+			
+Salesforce Application
+	Endpoint URLs
+	1. Generating the access token - https://login.salesforce.com/services/oauth2/token
+	2. Creating a Lead - https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead
+		00Q5j00000at3L1EAI
+		00Q5j00000at3L1EAI
+
+Status Codes
+2xx series - Success
+200 OK - response body contains the requested data
+201 Created - a new resource is created 
+202 Accepted - request has been accepted for processing
+204 No Content - there is no content to send for the request
+
+3xx - Redirection
+301 Moved Permanently - URL has been changed permanently
+302 Found - resource is temporarily under a different URL
+304 Not Modified - client's cached version of the requested resource is up-to-date
+
+4xx Client Errors
+400 Bad Request - invalid syntax/data
+401 Unauthorized - failed to provide proper authentication
+403 Forbidden - client does not have access rights to the content
+404 Not Found - The server cannot find the requested resource
+405 Method Not Allowed - The request method is known by the server but is not supported by the target resource.
+
+5xx Server Errors
+500 Internal Server Error - The server encountered an unexpected condition that prevented it from fulfilling the request.
+501 Not Implemented - The server does not support the functionality required to fulfill the request.
+502 Bad Gateway - The server, while acting as a gateway or proxy, received an invalid response from the upstream server.
+503 Service Unavailable - The server is not ready to handle the request, typically due to maintenance or overload.

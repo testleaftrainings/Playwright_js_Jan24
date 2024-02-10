@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "de134ce1-10e4-4df2-bc91-6c7a68e2a003",
+		"name": "Playwright_Jan2024",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28988315"
+	},
+	"item": [
+		{
+			"name": "Generate OAuth Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "3MVG9pRzvMkjMb6lZlt3YjDQwe0hk0f5ZPyWD38tfPYQ75KXUzZBGzM_c7I0o3yc6ua1IUk6lEQIy4U2sByrg",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "79FFF874D54193B377A60354C71CBBE83120AD28A5D6BC536D2F68C94645DE98",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "ranjini.r@testleaf.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Testleaf$1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.salesforce.com/services/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Lead",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQJ89MxcnX5mkq_PfSrVoFMesLrioRMyHnXscrp1YbMvhOgTiR364Mnn1bROX3XMmkoB95vjsHrSSUalbzuFbBmiZ6XmX",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Ranjini\",\r\n    \"LastName\": \"R\",\r\n    \"Company\": \"Testleaf\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/00Q5j00000at3wQEAQ",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"00Q5j00000at3wQEAQ"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Leads",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQJ89MxcnX5mkq_PfSrVoFMesLrioRMyHnXscrp1YbMvhOgTiR364Mnn1bROX3XMmkoB95vjsHrSSUalbzuFbBmiZ6XmX",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve the Lead Created",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQJ89MxcnX5mkq_PfSrVoFMesLrioRMyHnXscrp1YbMvhOgTiR364Mnn1bROX3XMmkoB95vjsHrSSUalbzuFbBmiZ6XmX",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/00Q5j00000at3wQEAQ",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"00Q5j00000at3wQEAQ"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the Lead",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQJ89MxcnX5mkq_PfSrVoFMesLrioRMyHnXscrp1YbMvhOgTiR364Mnn1bROX3XMmkoB95vjsHrSSUalbzuFbBmiZ6XmX",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Salutation\": \"Ms.\",\r\n    \"Company\": \"Qeagle\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/00Q5j00000at3wQEAQ",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"00Q5j00000at3wQEAQ"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the updated Lead",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQJ89MxcnX5mkq_PfSrVoFMesLrioRMyHnXscrp1YbMvhOgTiR364Mnn1bROX3XMmkoB95vjsHrSSUalbzuFbBmiZ6XmX",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/00Q5j00000at3wQEAQ",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"00Q5j00000at3wQEAQ"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
